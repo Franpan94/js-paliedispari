@@ -1,5 +1,6 @@
-let character = prompt('inserisci parola:')
-console.log(character);
+let character = prompt('inserisci parola:');
+document.getElementById('character').innerHTML = character;
+let output = document.getElementById('output');
 
 let reversecharacter;
 
@@ -10,19 +11,21 @@ let i = character.length - 1 ;
 
 while(i >= 0){
     reversecharacter = character[i];
-
+    
     newcharacter = newcharacter + reversecharacter;
     
     i--;
 }
 
-console.log(newcharacter);
+document.getElementById('new-character').innerHTML = newcharacter;
 
 function characters(word, reverseword){
     if(word === reverseword){
-        console.log('La parola è palindroma');
+        
+        output.innerHTML = 'La parola è palindroma';
     } else {
-        console.log('La parola non è palindroma');
+        
+        output.innerHTML = 'La parola non è palindroma';
     }
 }
 
