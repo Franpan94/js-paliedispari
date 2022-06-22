@@ -67,7 +67,7 @@ if(number <= 5) {
 
      function winner(usernumber, pcnumber) {
         if(usernumber > pcnumber) {
-            console.log()
+            console.log('Il giocatore vince');
         }
      }
      
