@@ -33,21 +33,24 @@ characters(character, newcharacter);
 
 // Pari e dispari
 let casual;
-let number = parseInt(prompt('inserisci un numero da 1 a 5:'))
+let number = parseInt(prompt('inserisci un numero da 1 a 5:'));
+let outputnumber = document.getElementById('output-number');
+let outputsum = document.getElementById('output-sum');
+let outputmessage = document.getElementById('output-message');
 
 if(number <= 5) {
     if(number % 2 === 0){
-        console.log('hai inserito un numero pari')
-        console.log(number);
+        
+        outputnumber.innerHTML = 'Il giocatore ha inserito un numero pari: ' + number;
      } else {
-        console.log('hai inserito un numero dispari');
-        console.log(number);
+        
+        outputnumber.innerHTML = 'Il giocatore ha inserito un numero dispari: ' + number;
      }
 
      function random(min, max) {
         casual = Math.floor(Math.random() * (max - min) + min);
-        console.log('numero inserito dal computer');
-        console.log(casual);
+        
+        document.getElementById('casual').innerHTML = casual;
      }
      
      random (1, 5);
@@ -57,24 +60,35 @@ if(number <= 5) {
      
      function even(newnumber) {
          if(newnumber % 2 === 0) {
-             console.log('la somma è pari');
-             console.log(sum);
+             
+             outputsum.innerHTML = 'La somma dei numeri inseriti è pari: ' + sum;
          } else {
              console.log('la somma è dispari');
              console.log(sum);
+             outputsum.innerHTML = 'La somma dei numeri inseriti è dispari: ' + sum;
          }
      }
 
-     function winner(usernumber, pcnumber) {
-        if(usernumber > pcnumber) {
-            console.log('Il giocatore vince');
-        }
-     }
-     
      even (sum);
 
-} else {
-    console.log('Hai sbagliato, riprova');
+     function winner(usernumber, pcnumber) {
+        if(usernumber > pcnumber) {
+           
+            outputmessage.innerHTML = 'Il giocatore vince';
+        } else if(usernumber < pcnumber) {
+       
+            outputmessage.innerHTML = 'Il computer vince';
+        } else {
+   
+            outputmessage.innerHTML = 'pareggio, perciò non esiste un vincitore';
+        }
+     }
+
+     winner (number, casual);
+     
+}  else {
+  
+    outputnumber.innerHTML = 'Hai sbagliato, riprova';
 }
 
 
