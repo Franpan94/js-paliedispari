@@ -1,3 +1,7 @@
 h2{
-    display: inline-block;
+    color: green;
+}
+
+h1{
+    color: red;
 }
